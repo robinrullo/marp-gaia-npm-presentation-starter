@@ -1,0 +1,16 @@
+{
+  "name": "marp-presentation-template",
+  "version": "1.0.0",
+  "scripts": {
+    "watch": "marp -w Presentation.md",
+    "build": "npm run build:assets && npm run build:html && npm run build:pdf && npm run build:pptx",
+    "build:html": "marp Presentation.md --html -o publish/html/Presentation.html --allow-local-files",
+    "build:pdf": "marp Presentation.md --pdf -o publish/Presentation.pdf --allow-local-files",
+    "build:pptx": "marp Presentation.md --pptx -o publish/Presentation.pptx --allow-local-files",
+    "build:assets": "mkdir -p publish/html/images && cp -r ./images ./publish/html"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@marp-team/marp-cli": "^1.5.0"
+  }
+}
